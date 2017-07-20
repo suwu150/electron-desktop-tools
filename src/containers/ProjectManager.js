@@ -5,6 +5,7 @@ import React from 'react';
 import { render } from 'react-dom';
 // import debug from 'debug';
 import _object from 'lodash/object';
+import { message } from 'antd'
 const debug = require('debug');
 // import ProjectList from '../components/projectManager/ProjectList';
 import { ProjectList } from '../components/index';
@@ -16,6 +17,76 @@ const projectWorkPath = '/home/jkwu/WebstormProjects/';
 
 
 class ProjectManager extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: ''
+    };
+  }
+
+  componentWillMount = () => {
+    const path = projectWorkPath;
+    const fileDirData = fs.readdir(path, (err, response) => {
+      if (err) {
+        message.error('文件读取失败');
+      } else {
+        const projectInfo2json = [];
+        console.log(response);
+        new Promise((resolve, reject) => {
+          try {
+            response.map(fileDirItem => {
+              console.log(fileDirItem + '---');
+              fs.stat(fileDirItem, (err, info) => {
+                console.log(info);
+                console.log(arguments);
+                switch (info.mode) {
+                  case 16822:
+                  case 16877:
+                    // 留下只是文件夹的,出去文件项,为下一步查询项目名进行做准备
+                    console.log( '[文件夹] ' + fileDirItem );
+                    // const currentFilePath = path + fileDirItem;
+                    // fs.readdir(currentFilePath, (err, response) => {
+                    //   if (err) {
+                    //     message.error('项目' + fileDirItem + '读取失败');
+                    //   } else {
+                        projectInfo2json.push({
+                          ...info,
+                          projectName: fileDirItem,
+                          projectType: '---',
+                          projectSize: info.size,
+                          createDate: info.ctime,
+                          creator: 'jkwu'
+                        });
+                      // }
+                    // });
+                    break;
+                  case 33188:
+                  case 33206:
+                    console.log( '[文件] ' + fileDirItem );
+                    break;
+                  default :
+                    console.log( '[其他类型] ' + fileDirItem );
+                    break;
+                }
+              });
+            });
+            resolve(projectInfo2json);
+          } catch (err) {
+            reject(err);
+          }
+        })
+            .then(() => {
+          console.log(projectInfo2json);
+          console.log('---测试.then()方法');
+            }
+        );
+
+        this.setState({
+          dataSource: projectInfo2json,
+        });
+      }
+    });
+  };
 
   _onAddProject = (projectInfo) => {
     log(projectInfo);
@@ -51,11 +122,14 @@ class ProjectManager extends React.Component {
   };
 
 
+
+
   render() {
     return (
         <div>
           <ProjectList
               addProject = {this._onAddProject}
+              dataSource={this.state.dataSource}
           />
         </div>
     );

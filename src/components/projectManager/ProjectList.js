@@ -40,14 +40,13 @@ class ProjectList extends React.Component {
     });
   };
 
-  _handleSubmit = () => {
+  _handleNextStep = () => {
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const { addProject } = this.props;
-        addProject && addProject(values);
         this.setState({
           visible: false,
           addFileDirectoryVisible: true,
+          projectInfo: values,
         });
       }
     });
@@ -59,7 +58,27 @@ class ProjectList extends React.Component {
     });
   };
 
+  _onFileDirectoryVisibleCancel = () => {
+    this.setState({
+      addFileDirectoryVisible: false
+    });
+  };
+
+  _onSubmitData = (data) => {
+    const { addProject } = this.props;
+    const projectInfo = this.state.projectInfo;
+    const projectFileInfo = {
+      ...projectInfo,
+      fileData: data.FileDataInfo
+    };
+    addProject && addProject(projectFileInfo);
+    this.setState({
+      addFileDirectoryVisible: false,
+    });
+  };
+
   render() {
+    const { dataSource } = this.props;
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
@@ -69,17 +88,6 @@ class ProjectList extends React.Component {
       wrapperCol: { span: 18, offset: 4 },
     };
 
-    const selectBefore = (
-        <Select defaultValue="Http://" style={{ width: 80 }}>
-          <Option value="Http://">Http://</Option>
-          <Option value="Https://">Https://</Option>
-        </Select>
-    );
-    const selectAfter = (
-        <Select defaultValue=".git" style={{ width: 70 }}>
-          <Option value=".git">.git</Option>
-        </Select>
-    );
     return (
         <div>
           <Button
@@ -90,14 +98,14 @@ class ProjectList extends React.Component {
           >新增项目</Button>
           <Table
               columns={this.state.column}
-              dataSource={[]}
+              dataSource={dataSource}
           />
           <Modal
               visible={this.state.visible}
               onCancel={this._handleCancel}
               cancelText="取消"
               okText={'下一步'}
-              onOk={() => this._handleSubmit()}
+              onOk={() => this._handleNextStep()}
           >
             <Form>
               <FormItem
@@ -153,6 +161,9 @@ class ProjectList extends React.Component {
           <AddFileDirectory
               { ...this.props}
               addFileDirectoryVisible = {this.state.addFileDirectoryVisible}
+              onFileDirectoryVisibleCancel = {this._onFileDirectoryVisibleCancel}
+              projectInfo={this.state.projectInfo}
+              onSubmitData={this._onSubmitData}
           />
         </div>
     )

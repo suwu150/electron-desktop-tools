@@ -2,129 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4385ae03-183d-444c-a4ce-6c1bbbc2763c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icon.icns" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/1024x1024.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/128x128.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/24x24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/256x256.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/48x48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/512x512.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/build/icons/96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/buttons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/detail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/fields.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/menus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/message.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/previous.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/role.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/image/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/site/fullscrean.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/app.icns" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/electronDesktopTool.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bundle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/electron.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/.eslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/public/stylesheets/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/routes/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/routes/users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/socket.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/views/error.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/views/index.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mock/views/layout.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/antd.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/demo_fontclass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/frame.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/iconfont.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/css/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lib/preload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lib/socket.io/socket.io.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lib/socket.io/socket.io.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ChatRoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ShowMe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/layout/Home.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/projectManager/ProjectList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/rentcrawler/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/site/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/site/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/site/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/site/webrtc.io.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/containers/ProjectManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main.development.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/otherDirectory/AR.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/otherDirectory/flv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/public/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/bpms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/exceldata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/subdomains.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/routes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/service/analytics.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/service/ipc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/service/socket.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/configureStore.development.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/configureStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/configureStore.production.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/styles/layout/Home.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/dependent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/error.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/json.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/platform.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/primary.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/scan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/storage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/uuid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/validator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/xml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/.eslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/actions/counter.spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/components/Counter.spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/components/CounterPage.spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/e2e.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/example.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/reducers/counter.spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/setup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.js" afterPath="$PROJECT_DIR$/dist/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js" afterPath="$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/projectManager/ProjectList.js" afterPath="$PROJECT_DIR$/src/components/projectManager/ProjectList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/ProjectManager.js" afterPath="$PROJECT_DIR$/src/containers/ProjectManager.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -145,26 +28,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProjectList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/projectManager/ProjectList.js">
+      <file leaf-file-name="AddFileDirectory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="51" column="7" lean-forward="false" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state relative-caret-position="1890">
+              <caret line="130" column="17" lean-forward="false" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="17" />
               <folding>
-                <element signature="e#39#65#0" expanded="true" />
+                <marker date="1500449039567" expanded="true" signature="1852:1973" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddFileDirectory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js">
+      <file leaf-file-name="ProjectList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/projectManager/ProjectList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="98" column="2" lean-forward="false" selection-start-line="98" selection-start-column="2" selection-end-line="98" selection-end-column="2" />
-              <folding>
-                <element signature="e#39#65#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1425">
+              <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,30 +53,21 @@
       <file leaf-file-name="ProjectManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/ProjectManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="121">
+              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="e#39#65#0" expanded="true" />
+                <element signature="e#132#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="19" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="70">
+              <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -219,6 +91,7 @@
       <find>subdo</find>
       <find>Menu.Item</find>
       <find>addFileDirectoryVisible</find>
+      <find>_handleFileData</find>
     </findStrings>
     <replaceStrings>
       <replace>MenuItem</replace>
@@ -226,11 +99,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/rentcrawler/app.js" />
         <option value="$PROJECT_DIR$/src/layout/Home.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
@@ -251,17 +128,16 @@
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/styles/style.css" />
         <option value="$PROJECT_DIR$/src/components/projectManager/addFileDirectory.js" />
-        <option value="$PROJECT_DIR$/src/containers/ProjectManager.js" />
         <option value="$PROJECT_DIR$/src/components/projectManager/AddItem.js" />
-        <option value="$PROJECT_DIR$/src/components/projectManager/ProjectList.js" />
         <option value="$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js" />
+        <option value="$PROJECT_DIR$/src/components/projectManager/ProjectList.js" />
+        <option value="$PROJECT_DIR$/src/containers/ProjectManager.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -290,8 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,24 +175,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="electronDesktopTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="electronDesktopTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="electronDesktopTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projectManager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,22 +250,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="electronDesktopTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="electronDesktopTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,11 +278,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="Node.js.ProjectManager.js">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/electronDesktopTool/src/index.html">
       <method />
     </configuration>
     <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/electronDesktopTool/src/public/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="ProjectManager.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="ProjectManager.js" working-dir="$PROJECT_DIR$/src/containers">
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -511,14 +358,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.ProjectManager.js" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.ProjectManager.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -547,12 +396,13 @@
       <workItem from="1500089428899" duration="23023000" />
       <workItem from="1500208454296" duration="9743000" />
       <workItem from="1500364516197" duration="234000" />
-      <workItem from="1500436083409" duration="250000" />
+      <workItem from="1500436083409" duration="14582000" />
+      <workItem from="1500514701587" duration="49000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66583000" />
+    <option name="totallyTimeSpent" value="80964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -567,19 +417,19 @@
     <frame x="55" y="24" width="1311" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17003106" sideWeight="0.484" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11801242" sideWeight="0.484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32375777" sideWeight="0.516" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3142415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32043344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32375777" sideWeight="0.516" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -589,6 +439,24 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -876,48 +744,46 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/projectManager/AddItem.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/projectManager/ProjectList.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="51" column="7" lean-forward="false" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-          <folding>
-            <element signature="e#39#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ProjectManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="e#39#65#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-30">
+          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/projectManager/AddFileDirectory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="98" column="2" lean-forward="false" selection-start-line="98" selection-start-column="2" selection-end-line="98" selection-end-column="2" />
+        <state relative-caret-position="1890">
+          <caret line="130" column="17" lean-forward="false" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="17" />
+          <folding>
+            <marker date="1500449039567" expanded="true" signature="1852:1973" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/projectManager/ProjectList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ProjectManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="36" />
           <folding>
             <element signature="e#39#65#0" expanded="true" />
+            <element signature="e#132#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="19" column="36" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="70">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -34,15 +34,14 @@ class AddFileDirectory extends React.Component {
                     size="small"
                     shape="circle"
                     icon="edit"
-                    onClick={() => this._handleFileData({ currentItem }, Operate.UPDATE)}
+                    onClick={() => this._addFileItemModal({ currentItem }, Operate.UPDATE)}
                 />
                 <Button
                     type="danger"
                     size="small"
                     shape="circle"
                     icon="delete"
-                    onClick={() => this._handleAddUpdateColumn(excelData, ColumnOperate.DELETE,
-                        currentColumnData, currentSheet)}
+                    onClick={() => this._handleDeleteFileData({ currentItem } ,Operate.DELETE)}
                 />
               </sapn>
             );
@@ -73,15 +72,8 @@ class AddFileDirectory extends React.Component {
   };
 
   _handleSubmit = () => {
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        const { addProject } = this.props;
-        addProject && addProject(values);
-        this.setState({
-          visible: false,
-        });
-      }
-    });
+    const { onSubmitData } = this.props;
+    onSubmitData && onSubmitData({ FileDataInfo: this.state.defaultFileData });
   };
 
   _handleCancel = () => {
@@ -90,17 +82,33 @@ class AddFileDirectory extends React.Component {
     });
   };
 
-  _addFileItemModal = () => {
-    this.setState({
-      addFileItemVisible: true,
-    });
+  _addFileItemModal = (currentData, operateStatus) => {
+    switch (operateStatus) {
+      case Operate.ADD: {
+        this.setState({
+          addFileItemVisible: true,
+          operateStatus: Operate.ADD
+        }); break;
+      }
+      case Operate.UPDATE: {
+        this.setState({
+          addFileItemVisible: true,
+          currentItem: currentData.currentItem,
+          operateStatus: Operate.UPDATE
+        }); break;
+      }
+      default: {
+        console.log('没有匹配的操作项');
+      }
+    }
   };
 
-  _handleFileData = (data ,operateStatus) => {
+  _handleFileData = (data ,operateStatus = this.state.operateStatus) => {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         if (operateStatus === Operate.ADD) {
           this.setState({
+            addFileItemVisible: false,
             defaultFileData : this.state.defaultFileData.concat(
                 values.type === 'file' ? ({
                   name: values.name,
@@ -115,6 +123,7 @@ class AddFileDirectory extends React.Component {
           });
         }
         if (operateStatus === Operate.UPDATE) {
+          const currentItem = this.state.currentItem;
           const tempfileItemData = values.type === 'file' ? ({
             name: values.name,
             type: values.type,
@@ -124,9 +133,10 @@ class AddFileDirectory extends React.Component {
                 type: values.type
               });
           this.setState({
+            addFileItemVisible: false,
             defaultFileData : this.state.defaultFileData
                 .map(fileItem => {
-                  if (fileItem.name === data.currentItem.name && fileItem.type === data.currentItem.type) {
+                  if (fileItem.name === currentItem.name && fileItem.type === currentItem.type) {
                     return tempfileItemData;
                   }
                   return fileItem;
@@ -134,6 +144,30 @@ class AddFileDirectory extends React.Component {
           });
         }
       }
+    });
+  };
+
+  _handleDeleteFileData = (data) => {
+    const type = data.currentItem.type === 'file' ? '文件' : '目录';
+    const name = data.currentItem.name;
+    const defaultFileData = this.state.defaultFileData;
+    const that = this;
+    Modal.confirm({
+      title: '删除' + type,
+      content: '您确定要删除' + type + '-' + name + '-' + '吗??',
+      onOk(){
+        that.setState({
+          defaultFileData: defaultFileData
+              .filter(fileData => {
+                if (fileData.name === name && fileData.type === data.currentItem.type) {
+                  return false; //delete item
+                }
+                return true;  // not detelte item
+              })
+        });
+      },
+      okText: '删除',
+      cancelText: '取消',
     });
   };
 
@@ -150,11 +184,11 @@ class AddFileDirectory extends React.Component {
         <div>
           <Modal
               visible={this.props.addFileDirectoryVisible}
-              onCancel={this._handleCancel}
+              onCancel={this.props.onFileDirectoryVisibleCancel}
               onOk={() => this._handleSubmit()}
           >
             <Button
-                onClick={() => this._addFileItemModal()}
+                onClick={() => this._addFileItemModal({}, Operate.ADD)}
             >新增文件项目</Button>
             <Table
                 columns={this.state.column}
@@ -162,28 +196,28 @@ class AddFileDirectory extends React.Component {
             />
           </Modal>
           <Modal
-              visible={this.state.addFileItemVisible}
-              onCancel={this._handleCancel}
-              onOk={() => this._handleFileData(Operate.ADD)}
+            visible={this.state.addFileItemVisible}
+            onCancel={this._handleCancel}
+            onOk={() => this._handleFileData({})}
           >
             <Form>
               <FormItem
-                  label="文件类型"
-                  {...formItemLayout}
+                label="文件类型"
+                {...formItemLayout}
               >
                 {getFieldDecorator('type', {
                   rules: [{ required: true, message: '请选择文件类型' }],
                   initialValue: 'file',
                 })(
-                    <Select>
-                      <Option value="file">文件</Option>
-                      <Option value="dir">目录</Option>
-                    </Select>
+                  <Select>
+                    <Option value="file">文件</Option>
+                    <Option value="dir">目录</Option>
+                  </Select>
                 )}
               </FormItem>
               <FormItem
-                  label= {this.props.form.getFieldValue('type') === 'file' ? '文件名' : '目录名' }
-                  {...formItemLayout}
+                label= {this.props.form.getFieldValue('type') === 'file' ? '文件名' : '目录名' }
+                {...formItemLayout}
               >
                 {getFieldDecorator('name', {
                   rules: [{ required: true, message: '请输入有效的' +
@@ -194,21 +228,21 @@ class AddFileDirectory extends React.Component {
                 )}
               </FormItem>
               {this.props.form.getFieldValue('type') === 'file' ? (
-                  <FormItem
-                      label="内容"
-                      {...formItemLayout}
-                  >
-                    {getFieldDecorator('content', {
-                      rules: [{ required: false, message: '请输入文件内容' }],
-                      initialValue: '',
-                    })(
-                        <Input
-                            type={'textarea'}
-                            placeholder="请输入文本"
-                            autosize={{ minRows: 2, maxRows: 10 }}
-                        />
-                    )}
-                  </FormItem>) : null}
+                <FormItem
+                  label="内容"
+                  {...formItemLayout}
+                >
+                  {getFieldDecorator('content', {
+                    rules: [{ required: false, message: '请输入文件内容' }],
+                    initialValue: '',
+                  })(
+                    <Input
+                        type={'textarea'}
+                        placeholder="请输入文本"
+                        autosize={{ minRows: 2, maxRows: 10 }}
+                    />
+                  )}
+                </FormItem>) : null}
             </Form>
           </Modal>
         </div>
