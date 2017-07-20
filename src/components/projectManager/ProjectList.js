@@ -24,7 +24,9 @@ class ProjectList extends React.Component {
           title: '项目大小', dataIndex: 'projectSize', key: 'projectSize',
         },
         {
-          title: '创建日期', dataIndex: 'createDate', key: 'createDate',
+          title: '创建日期',
+          dataIndex: 'createDate',
+          key: 'createDate'
         },
         {
           title: '创建人', dataIndex: 'creator', key: 'creator',
@@ -79,6 +81,15 @@ class ProjectList extends React.Component {
 
   render() {
     const { dataSource } = this.props;
+    const tempDataSource = dataSource && dataSource.map(item => {
+      return {
+        projectName: item.projectName,
+        projectType: item.projectType,
+        projectSize: item.projectSize,
+        createDate: item.createDate,
+        creator: 'jkwu'
+      }
+    });
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
@@ -97,8 +108,9 @@ class ProjectList extends React.Component {
               onClick={() => this._handleProjectModal()}
           >新增项目</Button>
           <Table
+              rowKey={(record) => record.projectName}
               columns={this.state.column}
-              dataSource={dataSource}
+              dataSource={tempDataSource}
           />
           <Modal
               visible={this.state.visible}

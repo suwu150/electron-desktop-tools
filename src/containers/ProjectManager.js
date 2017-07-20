@@ -36,7 +36,7 @@ class ProjectManager extends React.Component {
           try {
             response.map(fileDirItem => {
               console.log(fileDirItem + '---');
-              fs.stat(fileDirItem, (err, info) => {
+              fs.stat(path + fileDirItem, (err, info) => {
                 console.log(info);
                 console.log(arguments);
                 switch (info.mode) {
@@ -57,6 +57,7 @@ class ProjectManager extends React.Component {
                           createDate: info.ctime,
                           creator: 'jkwu'
                         });
+                        console.log(projectInfo2json);
                       // }
                     // });
                     break;
@@ -68,6 +69,9 @@ class ProjectManager extends React.Component {
                     console.log( '[其他类型] ' + fileDirItem );
                     break;
                 }
+                this.setState({
+                  dataSource: projectInfo2json,
+                });
               });
             });
             resolve(projectInfo2json);
@@ -75,15 +79,11 @@ class ProjectManager extends React.Component {
             reject(err);
           }
         })
-            .then(() => {
-          console.log(projectInfo2json);
+          .then((projectInfo2json) => {
+          console.log(projectInfo2json + '.then()');
           console.log('---测试.then()方法');
             }
         );
-
-        this.setState({
-          dataSource: projectInfo2json,
-        });
       }
     });
   };
