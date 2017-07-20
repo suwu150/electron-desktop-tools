@@ -28,12 +28,36 @@ class ProjectList extends React.Component {
           dataIndex: 'createDate',
           key: 'createDate'
         },
+        { title: '创建人', dataIndex: 'creator', key: 'creator' },
         {
-          title: '创建人', dataIndex: 'creator', key: 'creator',
+          title: '操作',
+          dataIndex: 'operate',
+          key: 'operate',
+          render: (text, currentProject) => {
+            return (<span>
+              <Button
+                  type={'danger'}
+                  icon={'delete'}
+                  size="small"
+                  onClick={() => this._handleProject(currentProject)}
+              />
+            </span>);
+          }
         }
       ],
     }
+  };
 
+  _handleProject = currentData => {
+    const { onDeleteProject } = this.props;
+    Modal.confirm({
+      title: '删除项目',
+      content: '你确定要删除' + currentData.projectName + '项目吗?',
+      onOk() {
+        onDeleteProject && onDeleteProject(currentData);
+      },
+      onCancel() {},
+    });
   };
 
   _handleProjectModal = () => {
@@ -81,15 +105,15 @@ class ProjectList extends React.Component {
 
   render() {
     const { dataSource } = this.props;
-    const tempDataSource = dataSource && dataSource.map(item => {
-      return {
-        projectName: item.projectName,
-        projectType: item.projectType,
-        projectSize: item.projectSize,
-        createDate: item.createDate,
-        creator: 'jkwu'
-      }
-    });
+    // const tempDataSource = dataSource && dataSource.map(item => {
+    //   return {
+    //     projectName: item.projectName,
+    //     projectType: item.projectType,
+    //     projectSize: item.projectSize,
+    //     createDate: item.createDate,
+    //     creator: item.creator,
+    //   }
+    // });
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
@@ -110,7 +134,7 @@ class ProjectList extends React.Component {
           <Table
               rowKey={(record) => record.projectName}
               columns={this.state.column}
-              dataSource={tempDataSource}
+              dataSource={dataSource}
           />
           <Modal
               visible={this.state.visible}
