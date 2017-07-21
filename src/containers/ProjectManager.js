@@ -35,16 +35,35 @@ class ProjectManager extends React.Component {
     // /home/jkwu/webstormprojects/yyyyy
     // 回收站地址为 ./local/share/Trash
 
-    const trashPath = '/home/jkwu/.local/share/Trash/files/';
+    // const trashPath = '/home/jkwu/.local/share/Trash/files/';
     // const deleteProjectName = projectInfo.projectName;
     const deleteProjectPath = projectInfo.projectPath;
     // const inputStream = fs.createReadStream(deleteProjectPath);
     // const outputStream = fs.createWriteStream(trashPath + projectInfo.projectName);
     // log('输出路径' + outputStream);
     // inputStream.pipe(outputStream);
+    this._readDirectory(deleteProjectPath)
+        .then((response) => {
+      response && response.map(fileOrDirItem => {
+        fs.stat(deleteProjectPath + '/'+ fileOrDirItem, (err, info) => {
+          console.log(err);
+          console.log(info);
+          if (info.isDirectory()) {
+            this._onDeleteProject(deleteProjectPath + '/'+ fileOrDirItem)
+          }
+          if (info.isFile()) {
+            this._deleteFile(deleteProjectPath + '/'+ fileOrDirItem);
+          }
+        })
+      });
+    }).catch(error => {
+      message.error('内嵌链接数据修改失败');
+      log('内嵌链接数据修改失败', error);
+    });
   };
 
   _readDirectory = (path) => {
+    console.log('path:' + path);
     new Promise((reslove, reject) => {
       try {
         let items = [];
@@ -55,11 +74,6 @@ class ProjectManager extends React.Component {
       } catch (err) {
         reject(err);
       }
-    }).then((response) => {
-
-    }).catch(error => {
-      message.error('内嵌链接数据修改失败');
-      log('内嵌链接数据修改失败', error);
     });
   };
 
