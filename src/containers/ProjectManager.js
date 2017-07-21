@@ -42,23 +42,47 @@ class ProjectManager extends React.Component {
     // const outputStream = fs.createWriteStream(trashPath + projectInfo.projectName);
     // log('输出路径' + outputStream);
     // inputStream.pipe(outputStream);
-    // util.pump(inputStream, outputStream, () => {
-    //   console.log('移动成功');
-    //   // fs.unlinkSync(deleteProjectPath);
-    // });
-    fs.rmdir(deleteProjectPath, (err, response) => {
-      console.log(err);
-      console.log(response);suguniang
+  };
 
-      if (err) {
-        console.log('文件删除出错' + err);
+  _readDirectory = (path) => {
+    new Promise((reslove, reject) => {
+      try {
+        let items = [];
+        fs.readdir(path, response => {
+          items=response;
+        });
+        reslove(items);
+      } catch (err) {
+        reject(err);
       }
-      if (!err) {
-        this._onGetData();
-        message.success('文件删除成功');
+    }).then((response) => {
+
+    }).catch(error => {
+      message.error('内嵌链接数据修改失败');
+      log('内嵌链接数据修改失败', error);
+    });
+  };
+
+  _deleteDirectory = (path) => {
+    new Promise((reslove, reject) => {
+      try {
+        fs.rmdir(path);
+        reslove();
+      } catch (err) {
+        reject(err);
       }
     });
+  };
 
+  _deleteFile = (path) => {
+    new Promise((reslove, reject) => {
+      try {
+        fs.unlink(path);
+        reslove();
+      } catch (err) {
+        reject(err);
+      }
+    });
   };
 
   _onGetCreateDate = (infotime) => {
