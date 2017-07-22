@@ -207,7 +207,7 @@ class AddFileDirectory extends React.Component {
               >
                 {getFieldDecorator('type', {
                   rules: [{ required: true, message: '请选择文件类型' }],
-                  initialValue: '',
+                  initialValue: '--请选择--',
                 })(
                   <Select>
                     <Option value="file">文件</Option>
@@ -222,7 +222,7 @@ class AddFileDirectory extends React.Component {
                 {getFieldDecorator('name', {
                   rules: [{ required: true, message: '请输入有效的' +
                   this.props.form.getFieldValue('type') === 'file' ? '文件名' : '目录名'}],
-                  initialValue: 'file',
+                  initialValue: '-- --',
                 })(
                     <Input />
                 )}

@@ -48,13 +48,14 @@ class ProjectList extends React.Component {
     }
   };
 
-  _handleProject = currentData => {
+  _handleProject = currentProject => {
     const { onDeleteProject } = this.props;
     Modal.confirm({
       title: '删除项目',
-      content: '你确定要删除' + currentData.projectName + '项目吗?',
+      content: '你确定要删除' + currentProject.projectName + '项目吗?',
       onOk() {
-        onDeleteProject && onDeleteProject(currentData);
+        const deleteProjectPath = currentProject.projectPath;
+        onDeleteProject && onDeleteProject(deleteProjectPath);
       },
       onCancel() {},
     });

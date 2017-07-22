@@ -30,73 +30,55 @@ class ProjectManager extends React.Component {
     this._onGetData();
   };
 
-  _onDeleteProject = (projectInfo) => {
-    // 假删除,将项目移动到回收站
-    // /home/jkwu/webstormprojects/yyyyy
-    // 回收站地址为 ./local/share/Trash
-
-    // const trashPath = '/home/jkwu/.local/share/Trash/files/';
-    // const deleteProjectName = projectInfo.projectName;
-    const deleteProjectPath = projectInfo.projectPath;
-    // const inputStream = fs.createReadStream(deleteProjectPath);
-    // const outputStream = fs.createWriteStream(trashPath + projectInfo.projectName);
-    // log('输出路径' + outputStream);
-    // inputStream.pipe(outputStream);
-    this._readDirectory(deleteProjectPath)
-        .then((response) => {
-      response && response.map(fileOrDirItem => {
-        fs.stat(deleteProjectPath + '/'+ fileOrDirItem, (err, info) => {
-          console.log(err);
+  _onDeleteProject = (deleteProjectPath) => {
+    const fileOrDirItemArray = this._readDirectory(deleteProjectPath);
+    if (fileOrDirItemArray.length > 0) {
+      fileOrDirItemArray.map(fileOrDirItem => {
+        const info = fs.statSync(deleteProjectPath + '/' + fileOrDirItem);
           console.log(info);
           if (info.isDirectory()) {
-            this._onDeleteProject(deleteProjectPath + '/'+ fileOrDirItem)
+            const files = this._readDirectory(deleteProjectPath + '/' + fileOrDirItem);
+            if (files.length > 0) {
+              files.map(item => {
+                this._onDeleteProject(deleteProjectPath + '/' + fileOrDirItem + '/' + item);
+              });
+            }
+            this._deleteDirectory(deleteProjectPath + '/' + fileOrDirItem);
           }
           if (info.isFile()) {
-            this._deleteFile(deleteProjectPath + '/'+ fileOrDirItem);
+            this._deleteFile(deleteProjectPath + '/' + fileOrDirItem);
           }
-        })
       });
-    }).catch(error => {
-      message.error('内嵌链接数据修改失败');
-      log('内嵌链接数据修改失败', error);
-    });
+    }
+      this._deleteDirectory(deleteProjectPath);
   };
 
   _readDirectory = (path) => {
-    console.log('path:' + path);
-    new Promise((reslove, reject) => {
-      try {
-        let items = [];
-        fs.readdir(path, response => {
-          items=response;
-        });
-        reslove(items);
-      } catch (err) {
-        reject(err);
-      }
-    });
+    try {
+      const filesItem = fs.readdirSync(path);
+      console.log(path + '目录读取成功');
+      return filesItem;
+    } catch (err) {
+      console.log(err + path + '目录读取失败');
+    }
   };
 
   _deleteDirectory = (path) => {
-    new Promise((reslove, reject) => {
       try {
-        fs.rmdir(path);
-        reslove();
+        fs.rmdirSync(path);
+        console.log(path + '目录删除成功');
       } catch (err) {
-        reject(err);
+        console.log(err + path + '目录删除失败');
       }
-    });
   };
 
   _deleteFile = (path) => {
-    new Promise((reslove, reject) => {
       try {
         fs.unlink(path);
-        reslove();
+        console.log(path + '文件删除成功');
       } catch (err) {
-        reject(err);
+        console.log(err + path + '文件删除失败');
       }
-    });
   };
 
   _onGetCreateDate = (infotime) => {
