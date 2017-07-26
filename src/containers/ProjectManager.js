@@ -51,6 +51,7 @@ class ProjectManager extends React.Component {
       });
     }
       this._deleteDirectory(deleteProjectPath);
+      this._onGetData();
   };
 
   _readDirectory = (path) => {
@@ -143,6 +144,11 @@ class ProjectManager extends React.Component {
                     console.log( '[其他类型] ' + fileDirItem );
                     break;
                 }
+                const finalProjectInfo = {
+                  projects: projectInfo2json,
+                };
+                const data = JSON.stringify(finalProjectInfo, null, 2);
+                fs.writeFileSync('tempFiles/projectManager/projectManager.json', data);
                 this.setState({
                   dataSource: projectInfo2json,
                 });
@@ -153,13 +159,16 @@ class ProjectManager extends React.Component {
             reject(err);
           }
         })
-            .then((projectInfo2json) => {
-                  console.log(projectInfo2json + '.then()');
-                  console.log('---测试.then()方法');
-                }
-            );
       }
     });
+  };
+
+  _onWriteFileToJson = (projectInfo2json = this.state.projectInfo2json) => {
+    const finalProjectInfo = {
+      projects: projectInfo2json,
+    };
+    const data = JSON.stringify(finalProjectInfo, null, 2);
+    fs.writeFileSync('tempFiles/projectManager/projectManager.json', data);
   };
 
   _onAddProject = (projectInfo) => {

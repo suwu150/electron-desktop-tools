@@ -19,3 +19,4 @@ src/node_modules
 package.json
 npm-debug.log
 dist/
+tempFiles
