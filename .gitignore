@@ -20,3 +20,4 @@ package.json
 npm-debug.log
 dist/
 tempFiles
+.idea
