@@ -63,6 +63,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "lodash": "^4.17.4",
+    "sort-object-attribute": "0.0.14",
     "mongoose": "^4.11.1",
     "nodejieba": "^2.2.0",
     "react": "^15.4.2",
