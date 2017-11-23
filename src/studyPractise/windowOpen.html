@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>M</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var runBtn = document.getElementById('input');
+        var runTextArea = document.getElementById('textarea');
+        var result = document.getElementById('result');
+        runBtn.onclick = function() {
+          result.innerHTML = runTextArea.value;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type='button' id="input" value='运行'/><br/>
+      <textarea rows='10' cols='30' id="textarea" ></textarea>
+    </div>
+    <h5>效果展示：</h5>
+  <div id="result">
+  </div>
+  </body>
+</html>
