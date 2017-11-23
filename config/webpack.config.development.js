@@ -15,9 +15,7 @@ import paths from './paths';
 const port = process.env.PORT || 3009;
 
 export default merge(baseConfig, {
-  // debug: true,
-
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
 
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,

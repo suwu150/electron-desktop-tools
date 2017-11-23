@@ -3,15 +3,11 @@
  */
 import React from 'react';
 import debug from 'debug';
-// import _object from 'lodash/object';
+import fs from 'fs';
 import { message } from 'antd'
-// import ProjectList from '../components/projectManager/ProjectList';
 import { ProjectList } from '../components/index';
 
-const fs = require('fs');
-// const util = require('util');
 const log = debug('electronDeskTopTool: container/ProjectManager');
-
 const projectWorkPath = '/home/jkwu/webstormprojects/';
 
 class ProjectManager extends React.Component {
@@ -102,7 +98,6 @@ class ProjectManager extends React.Component {
         message.error('文件读取失败');
       } else {
         const projectInfo2json = [];
-        console.log(response);
         Promise((resolve, reject) => {
           try {
             response.map(fileDirItem => {
@@ -150,14 +145,6 @@ class ProjectManager extends React.Component {
       }
     });
     log(fileDirData);
-  };
-
-  _onWriteFileToJson = (projectInfo2json = this.state.projectInfo2json) => {
-    const finalProjectInfo = {
-      projects: projectInfo2json,
-    };
-    const data = JSON.stringify(finalProjectInfo, null, 2);
-    fs.writeFileSync('tempFiles/projectManager/projectManager.json', data);
   };
 
   _onAddProject = (projectInfo) => {

@@ -9,7 +9,6 @@ let BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 
 module.exports = {
     entry: path.join(SOURCE_PATH, './index.js'),
-    target: 'node',
     devtool: '#inline-source-map',
     output: {
         path: BUILD_PATH,
