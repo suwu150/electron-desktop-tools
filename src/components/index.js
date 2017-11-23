@@ -1,6 +1,6 @@
 //
 // // layout
-// export NotFound from './layout/NotFound';
+export NotFound from './layout/NotFound';
 // export Header from './layout/Header';
 // export Navigation from './layout/Navigation';
 //
@@ -21,6 +21,5 @@
 //
 // // dependencies
 // export Dependencies from './dependencies';
-
 
 export ProjectList from './projectManager/ProjectList';

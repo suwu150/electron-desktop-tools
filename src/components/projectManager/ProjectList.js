@@ -2,17 +2,17 @@
  * Created by jkwu on 17-7-15.
  */
 import React from 'react';
-import _object from 'lodash/object';
+// import _object from 'lodash/object';
 import { Table, Button, Modal, Form, Input, Select } from 'antd';
 import AddFileDirectory from './AddFileDirectory';
 
-
 const FormItem = Form.Item;
 const Option = Select.Option;
+
 class ProjectList extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       column: [
         {
           title: '项目名', dataIndex: 'projectName', key: 'projectName',
@@ -34,19 +34,20 @@ class ProjectList extends React.Component {
           dataIndex: 'operate',
           key: 'operate',
           render: (text, currentProject) => {
-            return (<span>
-              <Button
-                  type={'danger'}
-                  icon={'delete'}
+            return (
+              <span>
+                <Button
+                  type="danger"
+                  icon="delete"
                   size="small"
                   onClick={() => this._handleProject(currentProject)}
-              />
-            </span>);
+                />
+              </span>);
           }
         }
       ],
     }
-  };
+  }
 
   _handleProject = currentProject => {
     const { onDeleteProject } = this.props;
@@ -98,7 +99,7 @@ class ProjectList extends React.Component {
       ...projectInfo,
       fileData: data.FileDataInfo
     };
-    addProject && addProject(projectFileInfo);
+    addProject(projectFileInfo);
     this.setState({
       addFileDirectoryVisible: false,
     });
@@ -106,15 +107,6 @@ class ProjectList extends React.Component {
 
   render() {
     const { dataSource } = this.props;
-    // const tempDataSource = dataSource && dataSource.map(item => {
-    //   return {
-    //     projectName: item.projectName,
-    //     projectType: item.projectType,
-    //     projectSize: item.projectSize,
-    //     createDate: item.createDate,
-    //     creator: item.creator,
-    //   }
-    // });
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 4 },
@@ -125,84 +117,85 @@ class ProjectList extends React.Component {
     };
 
     return (
-        <div>
-          <Button
-              {...buttonItemLayout}
-              type="primary"
-              size="small"
-              onClick={() => this._handleProjectModal()}
-          >新增项目</Button>
-          <Table
-              rowKey={(record) => record.projectName}
-              columns={this.state.column}
-              dataSource={dataSource}
-          />
-          <Modal
-              visible={this.state.visible}
-              onCancel={this._handleCancel}
-              cancelText="取消"
-              okText={'下一步'}
-              onOk={() => this._handleNextStep()}
-          >
-            <Form>
-              <FormItem
-                  label="项目名"
-                  {...formItemLayout}
-              >
-                {getFieldDecorator('projectName', {
-                  rules: [{ required: true, message: '请输入项目名称' }],
-                })(
-                    <Input />
-                )}
-              </FormItem>
-              <FormItem
-                  label="项目类型"
-                  {...formItemLayout}
-              >
-                {getFieldDecorator('projectType', {
-                  rules: [{ required: true, message: '请选择项目类型' }],
-                })(
-                  <Select>
-                    <Option value="Java">Java</Option>
-                    <Option value="Node">Node</Option>
-                    <Option value="JavaScript">JavaScript</Option>
-                    <Option value="C++">C++</Option>
-                    <Option value="Python">Python</Option>
-                    <Option value="c#">c#</Option>
-                    <Option value="net">.net</Option>
-                  </Select>
-                )}
-              </FormItem>
-              <FormItem
-                  label="git地址"
-                  {...formItemLayout}
-              >
-                {getFieldDecorator('gitAddress', {
-                  rules: [{ required: true, message: '请输入git地址' }],
-                })(
-                    <Input />
-                )}
-              </FormItem>
-              <FormItem
-                  label="创建人"
-                  {...formItemLayout}
-              >
-                {getFieldDecorator('creator', {
-                  rules: [{ required: true, message: '请输入创建人' }],
-                })(
-                    <Input />
-                )}
-              </FormItem>
-            </Form>
-          </Modal>
-          <AddFileDirectory
-              { ...this.props}
-              addFileDirectoryVisible = {this.state.addFileDirectoryVisible}
-              onFileDirectoryVisibleCancel = {this._onFileDirectoryVisibleCancel}
-              projectInfo={this.state.projectInfo}
-              onSubmitData={this._onSubmitData}
-          />
-        </div>
+      <div>
+        <Button
+          {...buttonItemLayout}
+          type="primary"
+          size="small"
+          onClick={() => this._handleProjectModal()}
+        >新增项目
+        </Button>
+        <Table
+          rowKey={(record) => record.projectName}
+          columns={this.state.column}
+          dataSource={dataSource}
+        />
+        <Modal
+          visible={this.state.visible}
+          onCancel={this._handleCancel}
+          cancelText="取消"
+          okText="下一步"
+          onOk={() => this._handleNextStep()}
+        >
+          <Form>
+            <FormItem
+              label="项目名"
+              {...formItemLayout}
+            >
+              {getFieldDecorator('projectName', {
+                rules: [{ required: true, message: '请输入项目名称' }],
+              })(
+                <Input />
+              )}
+            </FormItem>
+            <FormItem
+              label="项目类型"
+              {...formItemLayout}
+            >
+              {getFieldDecorator('projectType', {
+                rules: [{ required: true, message: '请选择项目类型' }],
+              })(
+                <Select>
+                  <Option value="Java">Java</Option>
+                  <Option value="Node">Node</Option>
+                  <Option value="JavaScript">JavaScript</Option>
+                  <Option value="C++">C++</Option>
+                  <Option value="Python">Python</Option>
+                  <Option value="c#">c#</Option>
+                  <Option value="net">.net</Option>
+                </Select>
+              )}
+            </FormItem>
+            <FormItem
+              label="git地址"
+              {...formItemLayout}
+            >
+              {getFieldDecorator('gitAddress', {
+                rules: [{ required: true, message: '请输入git地址' }],
+              })(
+                <Input />
+              )}
+            </FormItem>
+            <FormItem
+              label="创建人"
+              {...formItemLayout}
+            >
+              {getFieldDecorator('creator', {
+                rules: [{ required: true, message: '请输入创建人' }],
+              })(
+                <Input />
+              )}
+            </FormItem>
+          </Form>
+        </Modal>
+        <AddFileDirectory
+          {...this.props}
+          addFileDirectoryVisible={this.state.addFileDirectoryVisible}
+          onFileDirectoryVisibleCancel={this._onFileDirectoryVisibleCancel}
+          projectInfo={this.state.projectInfo}
+          onSubmitData={this._onSubmitData}
+        />
+      </div>
     )
   }
 }

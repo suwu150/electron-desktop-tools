@@ -27,8 +27,8 @@ if (isDev) {
 const createWindow = () => {
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 768,
+    width: 900,
+    height: 600,
     webPreferences: {
       // nodeIntegration: true,
       webSecurity: false,

@@ -1,5 +1,6 @@
 let path = require('path');
 let webpack = require('webpack');
+let fs = require('fs');
 
 // path
 let ROOT_PATH = path.resolve(__dirname);
@@ -7,7 +8,7 @@ let SOURCE_PATH = path.resolve(ROOT_PATH, 'src');
 let BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 
 module.exports = {
-    entry: path.join(SOURCE_PATH, './containers/ProjectManager.js'),
+    entry: path.join(SOURCE_PATH, './index.js'),
     target: 'node',
     devtool: '#inline-source-map',
     output: {
@@ -45,5 +46,6 @@ module.exports = {
             //     }
             // }
         ]
-    }
+    },
+    target: 'electron-renderer'
 };

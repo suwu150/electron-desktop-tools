@@ -19,8 +19,8 @@ function scanBpm(dslPath) {
 
   if (fs.existsSync(bpmPath)) {
     const bpmData = readFileSync(bpmPath);
-    bpms = bpmData.bpmModelMapping.mapping;
-    validator.validateBpmModelMappingFile(bpmPath);
+    // bpms = bpmData.bpmModelMapping.mapping;
+    // validator.validateBpmModelMappingFile(bpmPath);
   } else {
     ensureDirectoryExistence(bpmDirectory);
   }
@@ -37,7 +37,7 @@ function scanEntity(entityPath) {
       entities.push(entityData.entity.id);
       relatedEntities[entityData.entity.subdomain + '_' + entityData.entity.id]
         = _object.get(entityData, 'entity.relatedEntities', []);
-      validator.validateEntityFile(entityPath + '/' + entity);
+      // validator.validateEntityFile(entityPath + '/' + entity);
     });
   } else {
     ensureDirectoryExistence(entityPath);
