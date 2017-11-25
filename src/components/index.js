@@ -20,6 +20,6 @@ export NotFound from './layout/NotFound';
 // export RelatedEntityModal from './service/template/Basic/RelatedEntityModal';
 //
 // // dependencies
-// export Dependencies from './dependencies';
-// export ShowChat from '';
+export ShowStatistic from './statisticsAccessTimes/ShowStatistic';
+export ShowChat from './tuLingRobot/ShowChat';
 export ProjectList from './projectManager/ProjectList';

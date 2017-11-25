@@ -1,0 +1,29 @@
+@import "../global/index";
+
+.menu {
+  display: flex;
+
+  .tree {
+    border: 1px dotted @border-color-split;
+    min-width: 200px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    button {
+      width: 50%;
+      margin: 0;
+      margin-top: 2rem;
+      border-radius: 0;
+      border-color: @border-color-split;
+    }
+  }
+
+  .panel {
+    flex: 1;
+    margin-left: @layout-margin-small;
+    padding: @layout-margin-small;
+    border: 1px dotted @border-color-split;
+  }
+}

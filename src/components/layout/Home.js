@@ -86,6 +86,9 @@ class Home extends React.Component {
                   <MenuItem key="/tuLingRobot">
                     <Link to="/tuLingRobot">图灵智能机器人</Link>
                   </MenuItem>
+                  <MenuItem key="/statisticsAccessTimes">
+                    <Link to="/statisticsAccessTimes">页面访问次数统计</Link>
+                  </MenuItem>
                 </SubMenu>
                 <SubMenu
                     key="lifeEntertainmentManagerContainer"

@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/11/25.
  */
 import React from 'react';
+import { ShowChat } from '../components/index';
 
 class TuLingRobot extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class TuLingRobot extends React.Component {
       <div>
         <div>chatRoom</div>
         <div>{this.state.userName}</div>
+        <ShowChat />
       </div>
     )
   }

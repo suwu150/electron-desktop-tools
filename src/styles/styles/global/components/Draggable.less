@@ -1,0 +1,44 @@
+@draggable-prefix-cls: rc-draggable-attribute;
+
+.@{draggable-prefix-cls} {
+  margin: @layout-margin-small 0;
+  font-size: @font-size-base;
+  color: @text-color;
+  overflow: hidden;
+  position: relative;
+  border-radius: @border-radius-base @border-radius-base 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+
+  tr {
+    display: table-row;
+    transition: all 0.3s;
+
+    th {
+      background: #f7f7f7;
+      font-weight: bold;
+      padding: 16px 8px;
+      word-break: break-all;
+      transition: background 0.3s ease;
+    }
+
+    td {
+      border-bottom: 1px solid @border-color-split;
+      padding: 16px 8px;
+      word-break: break-all;
+      transition: background 0.3s ease;
+    }
+  }
+
+  &-draggableRow {
+    cursor: move;
+  }
+
+  &-ghost {
+    opacity: 0.2;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
