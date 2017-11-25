@@ -23,8 +23,8 @@ history.listen(location => {
 });
 
 render(
-    /* eslint-disable */
-    <Provider store={store}>
+/* eslint-disable */
+  <Provider store={store}>
     <Router history={history} routes={routers} />
   </Provider>,
   document.getElementById('root')

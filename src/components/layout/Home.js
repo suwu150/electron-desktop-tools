@@ -83,8 +83,17 @@ class Home extends React.Component {
                   className="topSubMenu"
                   title={<span><Icon type="area-chart" /><span className="nav-text">娱乐游戏管理</span></span>}
                 >
-                  <MenuItem key="/entertainmentGameManager">
-                    <Link to="/entertainmentGameManager">娱乐游戏管理</Link>
+                  <MenuItem key="/tuLingRobot">
+                    <Link to="/tuLingRobot">图灵智能机器人</Link>
+                  </MenuItem>
+                </SubMenu>
+                <SubMenu
+                    key="lifeEntertainmentManagerContainer"
+                    className="topSubMenu"
+                    title={<span><Icon type="area-chart" /><span className="nav-text">生活娱乐管理</span></span>}
+                >
+                  <MenuItem key="/lifeEntertainmentManager">
+                    <Link to="/lifeEntertainmentManager">生活娱乐管理</Link>
                   </MenuItem>
                 </SubMenu>
               </Menu>
