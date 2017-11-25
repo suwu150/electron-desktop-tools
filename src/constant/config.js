@@ -13,10 +13,6 @@ export default {
     entity: 'entity/',
     service: 'service/',
     bpm: 'general/',
-    custompages: 'general/',
-    bizexception: 'general/bizexception.json',
-    bpmmodelmapping: 'bpmmodelmapping.json',
-    customizeprivilege: 'general/customizeprivilege/customizeprivilege.json',
     excel: 'general/exceldata/',
     dependencies: 'package.json',
     lib: 'lib/',
@@ -25,5 +21,5 @@ export default {
     dataset: 'dataset/',
     datasetdsmeta: 'dsmeta.json',
   },
-  icon: 'http://at.alicdn.com/t/font_267551_da8k5a443fob6gvi.js',
+  icon: 'http://at.alicdn.com/t/font_267551_da8k5i.js',
 };
