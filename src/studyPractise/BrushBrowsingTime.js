@@ -48,7 +48,7 @@ function fetchBlog() {
       .then(response => {
         // console.log(response);
         // console.log('=======data========');
-        // console.log(response.data);
+        console.log(response.data);
         // console.log('=======status========');
         // console.log(response.status);
         // console.log('========statusText=======');

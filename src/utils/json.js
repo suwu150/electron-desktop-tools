@@ -7,6 +7,7 @@ import path from 'path';
 
 const log = debug('mx-dsl:utils/json');
 
+/* eslint-disable */
 // 判断文件是否存在
 function fileExist(filePath) {
   return fs.existsSync(filePath);

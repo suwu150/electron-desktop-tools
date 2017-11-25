@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>M</title>
+ <style>
+  #input {
+    border: 11px solid blue;
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    padding: 3px;
+    margin: 5px;
+  }
+  #input-no-scroll {
+   border: 11px solid blue;
+   width: 100px;
+   height: 100px;
+   padding: 3px;
+   margin: 5px;
+  }
+  #result {
+   border: 1px solid green;
+   width: 500px;
+   height: 300px;
+   float: right;
+   position: fixed;
+   margin-right: 5%;
+   right: 5px;
+   top: 10px;
+  }
+ </style>
+ <script type="text/javascript">
+   window.onload = function () {
+     var result = document.getElementById('result');
+     var input = document.getElementById('input');
+     var inputnoscroll = document.getElementById('input-no-scroll');
+     input.onclick = function() {
+       var r1 = 'clientWidth:' + input.clientWidth + '-clientHeight:' + input.clientHeight + '<br />';
+       var r2 = 'offsetWidth:' + input.offsetWidth + '-offsetHeight:' + input.offsetHeight + '<br />';
+       var r3 = 'scrollWidth:' + input.scrollWidth + '-scrollHeight:' + input.scrollHeight + '<br />';
+
+       var r1inputnoscroll = 'clientWidth:' + inputnoscroll.clientWidth + '-clientHeight:' + inputnoscroll.clientHeight + '<br />';
+       var r2inputnoscroll = 'offsetWidth:' + inputnoscroll.offsetWidth + '-offsetHeight:' + inputnoscroll.offsetHeight + '<br />';
+       var r3inputnoscroll = 'scrollWidth:' + inputnoscroll.scrollWidth + '-scrollHeight:' + inputnoscroll.scrollHeight + '<br />';
+
+       var browserInfo = "浏览器:" + getExplorerInfo().type + "\n 版本:" + getExplorerInfo().version;
+       var innerResult = browserInfo + '<hr />' + r1 + r2 + r3 + '<hr>' + r1inputnoscroll + r2inputnoscroll + r3inputnoscroll;
+       result.innerHTML = innerResult;
+     }
+   }
+   function getExplorerInfo() {
+     var explorer = window.navigator.userAgent.toLowerCase();
+     //ie
+     if (explorer.indexOf("msie") >= 0) {
+       var ver = explorer.match(/msie ([\d.]+)/)[1];
+       return { type: "IE", version: ver };
+     }
+     //firefox
+     else if (explorer.indexOf("firefox") >= 0) {
+       var ver = explorer.match(/firefox\/([\d.]+)/)[1];
+       return { type: "Firefox", version: ver };
+     }
+     //Chrome
+     else if (explorer.indexOf("chrome") >= 0) {
+       var ver = explorer.match(/chrome\/([\d.]+)/)[1];
+       return { type: "Chrome", version: ver };
+     }
+     //Opera
+     else if (explorer.indexOf("opera") >= 0) {
+       var ver = explorer.match(/opera.([\d.]+)/)[1];
+       return { type: "Opera", version: ver };
+     }
+     //Safari
+     else if (explorer.indexOf("Safari") >= 0) {
+       var ver = explorer.match(/version\/([\d.]+)/)[1];
+       return { type: "Safari", version: ver };
+     }
+   }
+ </script>
+</head>
+<body>
+<div id="input">
+ fdfdfdfffdf,tttttttttt.<br />
+ fdfdfdfffdf,.ttttttttt<br />
+ fdfdfdfffdttttf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />fdfdfdfffdf,.<br />fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+</div>
+<br />
+<div id="input-no-scroll">
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdftttttttttttttttttt,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />fdfdfdfffdf,.<br />fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+ fdfdfdfffdf,.<br />
+</div>
+<div id="result">
+</div>
+</body>
+</html>
