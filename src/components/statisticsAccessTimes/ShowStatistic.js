@@ -41,12 +41,12 @@ const UrlData = [
 ];
 
 class ShowChat extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     data: null
+  //   };
+  // }
   componentWillMount() {
     this.fetchData();
   }
@@ -71,7 +71,7 @@ class ShowChat extends React.Component {
           // console.log('=======config========');
           // console.log(response.config);
           // console.log('当前顺序:' + index);
-          this.setState({ data: response.data });
+          // this.setState({ data: response.data });
         })
         .catch(error => {
           console.log(error);
@@ -80,7 +80,9 @@ class ShowChat extends React.Component {
   };
 
   fetchData = () => {
-    setInterval(this.fetchBlog, 5000);
+    console.log('获取数据：');
+    this.fetchBlog();
+    // setInterval(this.fetchBlog, 5000);
   };
 
   render() {
@@ -88,7 +90,7 @@ class ShowChat extends React.Component {
       <div
         style={{ display: 'flex', height: 'inherit', flexDirection: 'column' }}
         dangerouslySetInnerHTML={{
-          __html: this.state.data
+          __html: '<h1>数据展示</h1>'
         }}
       />
     )
