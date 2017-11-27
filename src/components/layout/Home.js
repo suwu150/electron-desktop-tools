@@ -6,7 +6,6 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import styles from '../../styles/layout/Home.less';
 
 const { SubMenu } = Menu;
 // const { Header, Content, Footer, Sider } = Layout;
@@ -33,7 +32,7 @@ class Home extends React.Component {
   render() {
     const { children, routerActions } = this.props;
     return (
-      <Layout style={{ height: document.body.clientHeight }} className={styles}>
+      <Layout style={{ height: document.body.clientHeight }}>
         <Content>
           <Breadcrumb
             style={{

@@ -27,7 +27,8 @@
     "no-unused-expressions": 0,
     "react/jsx-closing-tag-location": 0,
     "array-callback-return": 0,
-    "consistent-return": 0
+    "consistent-return": 0,
+    "jsx-a11y/anchor-is-valid": 0
   },
   "plugins": ["react"],
   "extends": "airbnb"

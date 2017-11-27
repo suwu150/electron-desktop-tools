@@ -13,6 +13,8 @@ import analytics from './service/analytics';
 
 import { appLoadingStart, initApp } from './actions/global';
 
+import './styles';
+
 const store = configureStore();
 store.dispatch(appLoadingStart('系统正在初始化，请稍后 ...'));
 store.dispatch(initApp());

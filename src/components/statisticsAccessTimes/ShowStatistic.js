@@ -86,6 +86,7 @@ class ShowChat extends React.Component {
   };
 
   render() {
+    /* eslint-disable */
     return (
       <div
         style={{ display: 'flex', height: 'inherit', flexDirection: 'column' }}

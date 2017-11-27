@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 
 class NotFound extends React.Component {
   render() {
@@ -7,6 +7,8 @@ class NotFound extends React.Component {
       <div id="page-404">
         <section>
           <h1>404</h1>
+          <p>页面不存在,您可以:</p><br />
+          <Link to="/" >返回首页</Link>
         </section>
         <style
           // eslint-disable-next-line react/no-danger
