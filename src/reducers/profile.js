@@ -9,10 +9,12 @@ const initialState = {
   gitPath: '',
   appPath: '',
   userDataPath: '',
+  /* eslint-disable no-undef */
   height: document.documentElement.clientHeight,
   width: document.documentElement.clientWidth,
   gitBranch: '',
   dependencies: [],
+  tuLingApiUrl: '',
 
   init: false,
   loading: false,

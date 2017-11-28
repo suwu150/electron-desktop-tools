@@ -3,17 +3,19 @@
  */
 import React from 'react';
 
-function ShowContentPanel() {
+function ShowContentPanel(props) {
+  const showContentData = props && props.contentData ? props.contentData : [];
+  console.log(props);
   return (
     <div style={{
       width: '100%',
-      height: '500px',
+      height: '300px',
       border: '1px solid gray',
       display: 'flex',
       flex: '1 1 auto'
     }}
     >
-      <div>ShowChat</div>
+      <div>{JSON.stringify(showContentData)}</div>
     </div>
   );
 }

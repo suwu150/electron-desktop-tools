@@ -3,7 +3,7 @@ One is the development of desktop tools with electron
 在这个项目中,主要用于测试工作过程中遇到的问题,并且对产生的问题进行深度实践,其中,在实践中主要开发的功能有以下模块:     
     
         
-#####下载
+##### 下载
 ```$xslt
 https://github.com/suwu150/electron-desktop-tools
 ```    
@@ -12,18 +12,18 @@ https://github.com/suwu150/electron-desktop-tools
 git clone https://github.com/suwu150/electron-desktop-tools.git
 ```        
     
-#####安装依赖包
+##### 安装依赖包
 ```$xslt
 npm i 
 ``` 
 在安装过程中下载时速度过慢，可以使用淘宝镜像进行下载，具体配置方法如下所示：
        [淘宝镜像的配置](http://blog.csdn.net/suwu150/article/details/78554516)     
-#####y运行    
+##### 运行    
     
 ```$xslt
 npm run dev
 ```           
-####一.模块总述  
+#### 一.模块总述  
 
 ##### 1.操作系统管理  
 

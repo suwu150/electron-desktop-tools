@@ -5,34 +5,6 @@ const axios = require('axios');
 
 const UrlData = [
   {
-    name: '基于jsp的文章',
-    url: 'http://blog.csdn.net/suwu150/article/details/51596584'
-  },
-  {
-    name: 'Atom如何实时渲染界面(markdown,html)',
-    url: 'http://blog.csdn.net/suwu150/article/details/65937423'
-  },
-  {
-    name: ' Linux操作系统的安装',
-    url: 'http://blog.csdn.net/suwu150/article/details/51506194'
-  },
-  {
-    name: '百度富文本编辑器的使用',
-    url: 'http://blog.csdn.net/suwu150/article/details/51470097'
-  },
-  {
-    name: '如何使用babel进行es6文件的编译',
-    url: 'http://blog.csdn.net/suwu150/article/details/77198968'
-  },
-  {
-    name: 'Linux常用命令介绍',
-    url: 'http://blog.csdn.net/suwu150/article/details/51527555'
-  },
-  {
-    name: 'myBatits增删改查实例',
-    url: 'http://blog.csdn.net/suwu150/article/details/52888392'
-  },
-  {
     name: '基于打包工具Webpack进行项目开发',
     url: 'http://blog.csdn.net/suwu150/article/details/77270404'
   }
@@ -65,11 +37,4 @@ function fetchBlog() {
   });
 }
 
-
-// setTimeout(fetchBlog, 10);
-// const time = Math.random() * 1/10;
-setInterval(fetchBlog,10);//1000为1秒钟
-
-
-// const fetch = require('fetch');
-// fetch('http://blog.csdn.net/suwu150/article/details/51596584').then((value) => { console.log('文件内容为: ' + value)}, (reason) => { console.log('未读取到文件!!')});
+fetchBlog();

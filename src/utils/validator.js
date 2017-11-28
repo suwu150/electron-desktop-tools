@@ -14,9 +14,6 @@ import infoSchema from '../../normalize/schema/service_info.json';
 import listSchema from '../../normalize/schema/service_list.json';
 import serviceSchema from '../../normalize/schema/service_service.json';
 import summarySchema from '../../normalize/schema/service_summary.json';
-import bpmEntitySchema from '../../normalize/schema/bpm_entity.json';
-import bpmSchema from '../../normalize/schema/bpm.json';
-import bpmModelMappingSchema from '../../normalize/schema/bpm_model_mapping.json';
 
 const ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
 const log = debug('mx-dsl:utils/validator');
@@ -36,11 +33,6 @@ export const validateProperties = data => validateData(propertiesSchema, data);
 export const validateDetail = data => validateData(detailSchema, data);
 export const validateInfo = data => validateData(infoSchema, data);
 export const validateList = data => validateData(listSchema, data);
-export const validateService = data => validateData(serviceSchema, data);
-export const validateSummary = data => validateData(summarySchema, data);
-export const validateBpmEntity = data => validateData(bpmEntitySchema, data);
-export const validateBpm = data => validateData(bpmSchema, data);
-export const validateBpmModelMapping = data => validateData(bpmModelMappingSchema, data);
 
 function validateFile(schema, path) {
   if (fs.existsSync(path)) {
@@ -58,7 +50,6 @@ function validateFile(schema, path) {
 }
 
 export const validateDictionaryFile = path => validateFile(dictionarySchema, path);
-export const validateEntityFile = path => validateFile(entitySchema, path);
 export const validateMenuFile = path => validateFile(menuSchema, path);
 export const validatePropertiesFile = path => validateFile(propertiesSchema, path);
 export const validateDetailFile = path => validateFile(detailSchema, path);
@@ -66,6 +57,3 @@ export const validateInfoFile = path => validateFile(infoSchema, path);
 export const validateListFile = path => validateFile(listSchema, path);
 export const validateServiceFile = path => validateFile(serviceSchema, path);
 export const validateSummaryFile = path => validateFile(summarySchema, path);
-export const validateBpmEntityFile = path => validateFile(bpmEntitySchema, path);
-export const validateBpmFile = path => validateFile(bpmSchema, path);
-export const validateBpmModelMappingFile = path => validateFile(bpmModelMappingSchema, path);

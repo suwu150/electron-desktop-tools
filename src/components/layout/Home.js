@@ -30,7 +30,8 @@ class Home extends React.Component {
 
   /* eslint-disable */
   render() {
-    const { children, routerActions } = this.props;
+    // 将store中的数据传递给容器组件
+    const { children, profile, routerActions } = this.props;
     return (
       <Layout style={{ height: document.body.clientHeight }}>
         <Content>
@@ -102,7 +103,7 @@ class Home extends React.Component {
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: document.body.clientHeight - 22, overflow: 'hidden' }}>
               {
-                React.cloneElement(children, ...routerActions)
+                React.cloneElement(children, { profile, ...routerActions })
               }
             </Content>
           </Layout>
@@ -112,7 +113,7 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = ({ routing }) => ({ routing });
+const mapStateToProps = ({ routing, profile }) => ({ routing, profile });
 
 const mapDispatchToProps = () =>
   dispatch => ({

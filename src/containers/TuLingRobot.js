@@ -13,11 +13,14 @@ class TuLingRobot extends React.Component {
   }
 
   render() {
+    const { profile } = this.props;
     return (
       <div>
         <div>chatRoom</div>
         <div>{this.state.userName}</div>
-        <ShowChat />
+        <ShowChat
+          profile={profile}
+        />
       </div>
     )
   }

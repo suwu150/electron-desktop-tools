@@ -22,11 +22,19 @@ const appInitEnd = createAction(types.APP_INIT_END);
 export const appLoadingStart = createAction(types.APP_LOADING_START);
 export const appLoadingEnd = createAction(types.APP_LOADING_END);
 export const initApp = () => (dispatch) => {
-  dispatch(appInit('ok'));
-  dispatch(appInitEnd('ok'));
-  dispatch(appLoadingEnd('ok'));
+  const tuLingApiUrl = 'http://www.tuling123.com/openapi/api';
   dispatch(batchActions([
     appInit({}),
+    appLoadingEnd(),
+    appInitEnd(),
+  ]));
+  dispatch(batchActions([
+    appInit({
+      profile:
+        {
+          tuLingApiUrl
+        },
+    }),
     appLoadingEnd(),
     appInitEnd(),
   ]));

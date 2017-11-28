@@ -1,7 +1,7 @@
 // @flow
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-// import profile from './profile';
+import profile from './profile';
 // import subdomains from './subdomains';
 // import bpms from './bpms';
 // import ui from './ui';
@@ -9,6 +9,7 @@ import { routerReducer as routing } from 'react-router-redux';
 
 const rootReducer = combineReducers({
   routing,
+  profile
 });
 
 export default rootReducer;
