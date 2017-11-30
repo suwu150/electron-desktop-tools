@@ -16,7 +16,7 @@ git clone https://github.com/suwu150/electron-desktop-tools.git
 ```$xslt
 npm i 
 ``` 
-在安装过程中下载时速度过慢，可以使用淘宝镜像进行下载，具体配置方法如下所示：
+在安装过程中下载时速度过慢，可以使用淘宝镜像进行下载，具体配置方法如下所示：  
        [淘宝镜像的配置](http://blog.csdn.net/suwu150/article/details/78554516)     
 ##### 运行    
     
@@ -52,7 +52,7 @@ npm run dev
    1.实现租房信息的爬虫               
          
    
-####一.模块说明    
+#### 一.模块说明    
             
             
 ##### 1.操作系统管理  
