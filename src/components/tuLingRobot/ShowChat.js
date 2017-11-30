@@ -17,26 +17,20 @@ class ShowChat extends React.Component {
     };
   }
 
-  sendMessage = (props) => {
+  sendMessage = (values) => {
     const { profile } = this.props;
     const tulingApiUrl = profile && profile.tuLingApiUrl;
-    props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        Paxios(tulingApiUrl, {
-          key: '73eb675db6b77d2736db5069571576c5',
-          info: values.sendMessage,
-          loc: '北京市中关村',
-          userid: 'jkwuranran'
-        }).then(response => {
-          console.log(response);
-          this.setState({
-            responseData: response.data,
-            contentData: ((this.state.contentData && this.state.contentData.length <= 0) ? [] :
-              this.state.contentData).concat(response.data)
-          });
-        });
-      }
+    Paxios(tulingApiUrl, {
+      key: '73eb675db6b77d2736db5069571576c5',
+      info: values.sendMessage,
+      loc: '北京市中关村',
+      userid: 'jkwuranran'
+    }).then(response => {
+      this.setState({
+        responseData: response.data,
+        contentData: ((this.state.contentData && this.state.contentData.length <= 0) ? [] :
+          this.state.contentData).concat(response.data)
+      });
     });
   };
 
