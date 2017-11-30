@@ -119,6 +119,21 @@ function saveFilePromise(jsonObj, filePath) {
     });
   });
 }
+
+// 异步追加文件
+function appendFilePromise(obj, filePath) {
+  return new Promise((resolve, reject) => {
+    fs.appendFile(filePath, obj, 'utf-8', (err) => {
+      if (err) {
+        reject(err);
+        log('文件追加失败:' + err + ' filePath: ' + filePath);
+      } else {
+        resolve(obj);
+      }
+    });
+  });
+}
+
  // 异步保存json文件通过回调
 function saveFileCall(jsonObj, filePath, callBack) {
   fs.writeFile(filePath, JSON.stringify(jsonObj, null, 2), (err) => {
@@ -188,6 +203,7 @@ export {
   readFileCall,
   saveFileSync,
   saveFilePromise,
+  appendFilePromise,
   saveFileCall,
   deleteDirectoryFile,
   renameSubdomain,
