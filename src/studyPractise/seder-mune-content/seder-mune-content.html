@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+            display: block;
+            line-height: 30px;
+            padding-left: 20px;
+            color: #fff;
+        }
+        ul {
+            width: 30%;
+            min-width: 150px;
+            max-width: 240px;
+            height: 600px;
+            display: block;
+            padding-top: 30px;
+            background: #333;
+            margin: 0;
+            float: left;
+        }
+        li {
+            list-style: none;
+            width: 120px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .li {
+            background:#fff;
+            color:#333;
+        }
+        .container {
+            float: left;
+            width: 70%;
+            height: 500px;
+            padding-top: 30px;
+            background: #ccc;
+        }
+
+        .iframe {
+            width: inherit;
+            height: inherit;
+            border-style: none;
+        }
+
+    </style>
+    <script type="text/javascript">
+      var selectedLi;
+
+      function change(page) {
+        if (selectedLi == null) {
+          selectedLi = page;
+          selectedLi.className = null;
+        } else {
+          selectedLi.className = null;
+          selectedLi = page;
+        }
+        page.className = "li";
+        // 在同一目录下 创建1.html 2.html 3.html 取消注释下面的iframe 可使用此方法进行切换
+         document.getElementById('content').src = page.rel+".html";
+//        document.getElementById('container').innerHTML = "#######" + page.rel;
+
+      }
+
+    </script>
+</head>
+<body>
+<ul id="menu">
+    <li><a onclick="change(this)" href="javascript:;" rel="1" class="li">标签1</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="2">标签2</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签3</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签4</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签5</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签6</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签7</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签8</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签9</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签10</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签11</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签12</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签13</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签14</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签15</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签16</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签17</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签18</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签19</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签20</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签21</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签22</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签23</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签24</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签25</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签26</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签27</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签28</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签29</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签30</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签31</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签32</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签33</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签34</a></li>
+    <li><a onclick="change(this)" href="javascript:;" rel="3">标签35</a></li>
+
+
+</ul>
+<div id="container" class="container">
+    #######1
+     <iframe id="content" class="iframe" src="#"></iframe>
+</div>
+<script type="text/javascript">
+  var ul = document.getElementById("menu");
+  var li = ul.getElementsByTagName("li")[0];
+  selectedLi = li.getElementsByTagName("a")[0];
+</script>
+</body>
+</html>
