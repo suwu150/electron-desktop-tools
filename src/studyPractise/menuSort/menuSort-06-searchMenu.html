@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  var menudata = [
+    {   sortCode: '00',	id: 'CustomerManager-noMenu'},
+    {   sortCode: '10',	id: 'CustomerManager'},
+    {	sortCode: '10-10',id: 'EntCustomer'},
+    {	sortCode: '10-20',id: 'AgentCredit'},
+    {	sortCode: '10-30',id: 'ThirdParty'},
+    {	sortCode: '20',id: 'ImportAgentCredit'},
+    {	sortCode: '20-10',id: 'ShowCase20-10'},
+    {	sortCode: '20-10-20',id: 'ShowCase20-10-20'},
+    {	sortCode: '20-10-20-30',id: 'ShowCase20-10-20-30'},
+  ];
+
+  function translate (data, params) {
+    const menuMap = {};
+    const menuData = data.slice(0);
+    params = {
+      sortCodeName: params.sortCodeName ? params.sortCodeName : 'sortCode',
+      parentName: params.parentName ? params.parentName : 'parent',
+      childrenName: params.childrenName ? params.childrenName : 'children',
+      levelName: params.levelName ? params.levelName : 'level',
+    };
+    menuData.slice(0).map(function(item){
+      if (Object.keys(item).includes(params.sortCodeName)) {
+        menuMap[item[params.sortCodeName]] = item;
+      } else {
+        console.log(item.id + '--缺少sortCode');
+      }
+    });
+
+    for(let id in menuMap){
+      const item = menuMap[id],
+        codes = item[params.sortCodeName].trim().split('-'),
+        parent = menuMap[codes.slice(0,codes.length - 1).join('-')] || null;
+      if(parent){
+        parent[params.childrenName] = parent[params.childrenName] || [];
+        item[params.parentName] = parent;
+        parent[params.childrenName].push(item);
+      }
+      item[params.levelName] = codes.length;
+    }
+    return data;
+  }
+
+  // 移除掉其他的
+  removeLevelMore = (treeData) => {
+    const tempTreeData = treeData.slice(0);
+    return tempTreeData.filter(menuItem => {
+      const sortCodeItems = menuItem.sortCode && menuItem.sortCode.split('-');
+      if (sortCodeItems && sortCodeItems.length === 1) {
+        return true;
+      }
+      return false;
+    });
+  };
+
+  var constructName = {
+    sortCodeName: 'sortCode',
+    parentName: 'parent-menu',
+    childrenName: 'children-menu',
+    levelName: 'level-menu'
+  };
+//  console.log(translate(menudata, {sortCodeName: 'sortCode', parentName: 'parent-menu', childrenName: 'children-menu', levelName: 'level-menu'}));
+var constructTreeData = removeLevelMore(translate(menudata, constructName));
+//console.log(constructTreeData);
+
+let resultMenu = [];
+  function getMenus(_menus, callback) {
+    const tempMenus = _menus.slice(0);
+    tempMenus && tempMenus.map(curr => {
+      if (curr[constructName.childrenName]) {
+        getMenus(curr[constructName.childrenName]);
+      }
+//      delete curr[constructName.childrenName];
+//      delete curr[constructName.parentName];
+//      delete curr[constructName.levelName];
+      resultMenu.push(curr);
+      callback(resultMenu);
+    });
+//    return resultMenu;
+  }
+
+  const deConstructTreeData = getMenus(constructTreeData);
+  console.log(deConstructTreeData);
+
+
+</script>
+<body>
+
+</body>
+</html>
