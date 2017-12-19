@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!--引入外部库-->
+    <script type="text/javascript" src="ChinesePY.js"></script>
+    <script>
+      var data = ['魅族', '小米', '华为', '苹果' , '乐视'];
+      var itemMap = {};
+      for (var item of data) {
+        // 获取首字母
+        var result = Pinyin.GetJP(item);
+        itemMap[result] = item;
+      }
+      console.log(itemMap);
+
+    </script>
+</head>
+<body style="font-size:12px">
+<form>
+    <div>
+
+    </div>
+</form>
+</body>
+</html>
