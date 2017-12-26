@@ -34,14 +34,13 @@ const server = app.listen(PORT, 'localhost', serverError => {
   if (serverError) {
     return console.error(serverError);
   }
-
   if (argv['start-hot']) {
     spawn('npm', ['run', 'start-hot'], { shell: true, env: process.env, stdio: 'inherit' })
       .on('close', code => { console.log('--77-'); process.exit(code)} )
       .on('error', spawnError => { console.log('--66-'); console.error(spawnError);});
   }
 
-  console.log(`Listening at http://localhost:${PORT}`);
+  console.log(`Listening at \uD83D\uDE80 http://localhost:${PORT}`);
 });
 
 process.on('SIGTERM', () => {

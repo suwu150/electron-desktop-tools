@@ -4,6 +4,8 @@
 import React from 'react';
 import debug from 'debug';
 import fs from 'fs';
+import Perf from 'react-addons-perf';
+
 import { message } from 'antd'
 import { ProjectList } from '../components/index';
 
@@ -19,7 +21,26 @@ class ProjectManager extends React.Component {
   }
 
   componentWillMount = () => {
+    Perf.start();
     this._onGetData();
+    Perf.stop();
+    const measurements = Perf.getLastMeasurements();
+    Perf.printInclusive(measurements);
+    Perf.printExclusive(measurements);
+    Perf.printWasted(measurements);
+    Perf.printOperations(measurements);
+    // Perf.printDOM(measurements)
+    // Perf.stop();
+    // const measurements = Perf.getLastMeasurements();
+    // // console.log('printInclusive:');
+    // Perf.printInclusive(measurements);
+    // // console.log('printExclusive:');
+    // Perf.printExclusive(measurements);
+    // // console.log('printWasted:');
+    // Perf.printWasted(measurements);
+    // // console.log('printOperations:');
+    // Perf.printOperations(measurements);
+    // // Perf.printDOM(measurements)
   };
 
   _onDeleteProject = (deleteProjectPath) => {

@@ -288,9 +288,13 @@ log = (data) => {
 // log(/^\uD83D/u.test('\uD83D\uDC2A')) // false
 // log(/^\uD83D/.test('\uD83D')) // true
 
-const RE_DATE = /(\d{4})-(\d{2})-(\d{2})/;
-const matchObj = RE_DATE.exec('1999-12-31');
-const year = matchObj[1]; // 1999
-const month = matchObj[2]; // 12
-const day = matchObj[3]; // 31
-log(matchObj);
+// const RE_DATE = /(\d{4})-(\d{2})-(\d{2})/;
+// const matchObj = RE_DATE.exec('1999-12-31');
+// const year = matchObj[1]; // 1999
+// const month = matchObj[2]; // 12
+// const day = matchObj[3]; // 31
+// log(matchObj);
+
+log([...'hello'])
+log([...'x\uD83D\uDE80y'].length)
+log('x\uD83D\uDE80y'.length)

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>drag</title>
+    <style>
+        #list li{
+            border:1px solid #000;
+            width:100px;
+            height:20px;
+            background-color:yellow;
+            margin-bottom:10px;
+            list-style:none;
+            text-align:center;
+        }
+        #mark{
+            width:200px;
+            height:200px;
+            border:1px solid #000;
+            background-color:red;
+            margin-left:300px;
+            margin-top:300px;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li draggable="true">A</li>
+    <li draggable="true">B</li>
+    <li draggable="true">C</li>
+    <li draggable="true">D</li>
+</ul>
+<div id="mark">
+
+</div>
+<script>
+  window.onload=function(){
+    var oUl=document.getElementById('list');
+    var oLi=oUl.getElementsByTagName('li');
+    var oMark=document.getElementById('mark');
+    var liLen=oLi.length;
+    for(var i=0; i<liLen; i++){
+      oLi[i].ondragstart=function(ev){
+        var ev=window.event||ev;
+        ev.dataTransfer.setData('name','1');
+        ev.dataTransfer.effectAllowed='link';
+        ev.dataTransfer.setDragImage(oMark,50,50);
+        this.style.backgroundColor="green";
+      }
+      oLi[i].ondrag=function(){
+        //this.style.backgroundColor="red";
+      }
+      oLi[i].ondragend=function(){
+        this.style.backgroundColor="yellow";
+      }
+    }
+    oMark.ondragenter=function(ev){
+      var ev=window.event||ev;
+      this.style.backgroundColor="green";
+    }
+    oMark.ondragover=function(ev){
+      var ev=window.event||ev;
+      ev.preventDefault();
+      this.style.backgroundColor="pink";
+    }
+    oMark.ondragleave=function(){
+      this.style.backgroundColor="orange";
+    }
+    oMark.ondrop=function(ev){
+      this.style.backgroundColor="black";
+      if(ev.dataTransfer.types=="name"){
+        alert(true);
+      }
+    }
+
+  }
+</script>
+</body>
+</html>
