@@ -54,6 +54,20 @@ export default merge(baseConfig, {
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
+      {
+        // 进行性能
+        test: require.resolve("react-addons-perf"),
+        loader: "expose-loader?Perf"
+        /*
+         * // expose loader 用来把模块暴露到全局变量。这个功对调试或者支持依赖其他全局库的库时很有用
+         * require("expose-loader?libraryName!./file.js");
+         * // 通过属性名 "libraryName" 暴露 file.js 的 exports 到全局上下文。
+         * // 在浏览器中，就将可以使用 window.libraryName 。
+         * */
+      },
+      // // 设置滚动条插件
+      { test: /jquery-mousewheel/, loader: "imports-loader?define=>false&this=>window" },
+      { test: /malihu-custom-scrollbar-plugin/, loader: "imports-loader?define=>false&this=>window"}
     ]
   },
 

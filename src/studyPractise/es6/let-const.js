@@ -298,3 +298,4 @@ log = (data) => {
 log([...'hello'])
 log([...'x\uD83D\uDE80y'].length)
 log('x\uD83D\uDE80y'.length)
+log('\uD83D\uDE80y');

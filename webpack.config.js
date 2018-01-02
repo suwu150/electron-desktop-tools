@@ -4,6 +4,9 @@ let fs = require('fs');
 // 性能分析工具Perf的导入
 // const Perf = require.resolve('react-addons-perf');
 require('react-addons-perf');
+var $ = require('jquery');
+require("jquery-mousewheel")($);
+require('malihu-custom-scrollbar-plugin')($);
 // path
 let ROOT_PATH = path.resolve(__dirname);
 let SOURCE_PATH = path.resolve(ROOT_PATH, 'src');
@@ -56,8 +59,10 @@ module.exports = {
             * // 通过属性名 "libraryName" 暴露 file.js 的 exports 到全局上下文。
             * // 在浏览器中，就将可以使用 window.libraryName 。
             * */
-          }
-        ]
+          },
+          { test: /jquery-mousewheel/, loader: "imports?define=>false&this=>window" },
+          { test: /malihu-custom-scrollbar-plugin/, loader: "imports?define=>false&this=>window"}
+      ]
     },
     target: 'electron-renderer'
 };

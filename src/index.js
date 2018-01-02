@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
+import $ from 'jquery';
 import { Provider } from 'react-redux';
 import { Router, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -12,8 +13,10 @@ import configureStore from './store/configureStore';
 import analytics from './service/analytics';
 
 import { appLoadingStart, initApp } from './actions/global';
-
 import './styles';
+
+require('jquery-mousewheel')($);
+require('malihu-custom-scrollbar-plugin')($);
 
 const store = configureStore();
 store.dispatch(appLoadingStart('系统正在初始化，请稍后 ...'));
@@ -23,6 +26,7 @@ const history = syncHistoryWithStore(hashHistory, store);
 history.listen(location => {
   analytics.track(location.pathname);
 });
+
 
 render(
 /* eslint-disable */

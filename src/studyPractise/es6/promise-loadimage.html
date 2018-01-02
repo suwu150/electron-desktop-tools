@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<script>
+  function loadImageAsync(url) {
+    return new Promise(function(resolve, reject) {
+      const image = new Image();
+
+      image.onload = function() {
+        resolve(image);
+      };
+
+      image.onerror = function() {
+        reject(new Error('Could not load image at ' + url));
+      };
+
+      image.src = url;
+      image.width = 300;
+      image.height = 300;
+      document.getElementById("container").appendChild(image);
+    });
+  }
+</script>
+<body>
+<div id="container" class="container">
+
+</div>
+<script>
+  loadImageAsync(
+  'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514959523&di=1c75cccf356445e30af98dfa21dd2e5c&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140710%2F20140710213836-955952945.jpg'
+  );
+</script>
+</body>
+</html>

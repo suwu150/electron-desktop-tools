@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>electron-desktop-tool</title>
+    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="jquery.mCustomScrollbar.min.css" >
     <link rel="stylesheet" type="text/css" href="my-scroll-css.css" >
     <script src="./jquery-1.9.1.min.js"></script>
     <script src="jquery.mCustomScrollbar.concat.min.js"></script>
+    <style>
+        /*----*/
+        /* 定义div布局 */
+        .container {
+            height: 400px;
+            width: 300px;
+            border: 1px solid darkred;
+            overflow: auto;
+        }
+        .child1 {
+            height: 700px;
+            width: 700px;
+            border: 1px solid #6c8b40;
+        }
+    </style>
 </head>
-<body>
-<!--We are using Node.js <script>document.write(process.versions.node)</script>,-->
-<!--Chromium <script>document.write(process.versions.chrome)</script>,-->
-<!--and Electron <script>document.write(process.versions.electron)</script>.-->
-</body>
-<div id="entry" />
-<script src="./bundle.js"></script>
 <script>
   (function($){
     $(window).load(function(){
@@ -28,4 +36,9 @@
     });
   })(jQuery);
 </script>
+<body>
+<div class="container">
+    <div class="child1"></div>
+</div>
+</body>
 </html>

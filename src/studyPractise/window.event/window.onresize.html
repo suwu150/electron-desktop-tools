@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+          console.log('f1');
+        }
+        function f2() {
+          console.log('f2');
+        }
+        function f3() {
+          console.log('f3');
+        }
+        function f4() {
+          console.log('f4');
+        }
+        window.onload = function () {
+          addOnresize(f1);
+          addOnresize(f2);
+          addOnresize(f3);
+          addOnresize(f4);
+        };
+
+        function addOnresize(func) {
+          var oldOnResize = window.onresize;
+          if (typeof window.onresize !== 'function') {
+            window.onresize = func;
+          } else {
+            window.onresize = function () {
+              oldOnResize();
+              func();
+            }
+          }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
