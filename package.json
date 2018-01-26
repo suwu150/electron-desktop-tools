@@ -78,7 +78,6 @@
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-image-lightbox": "^4.4.0",
     "react-redux": "^5.0.5",
     "react-router": "^3.x",
     "react-router-dom": "^4.1.1",
@@ -93,6 +92,7 @@
     "sort-object-attribute": "0.0.14",
     "style-loader": "^0.16.0",
     "thunk": "0.0.1",
+    "viewerjs": "^1.0.0-beta.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-hot-middleware": "^2.17.1",
@@ -110,10 +110,11 @@
     "axios": "^0.17.1",
     "babel-eslint": "^8.0.2",
     "debug": "^3.1.0",
-    "jquery": "^3.2.1",
     "electron-contextmenu-middleware": "^1.0.3",
     "electron-input-menu": "^2.1.0",
+    "fs-readfile-promise": "^3.0.1",
     "imports-loader": "^0.7.1",
+    "jquery": "^3.2.1",
     "jquery-mousewheel": "^3.1.13",
     "lodash": "^4.17.4",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
@@ -121,6 +122,7 @@
     "react": "^15.4.2",
     "react-addons-perf": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-image-lightbox": "^4.4.0",
     "react-redux": "^5.0.5",
     "react-router": "^3.x",
     "react-router-dom": "^4.1.1",
@@ -132,6 +134,8 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
-    "simple-git": "^1.82.0"
+    "simple-git": "^1.82.0",
+    "thunkify": "^2.1.2",
+    "viewerjs": "^1.0.0-beta.1"
   }
 }

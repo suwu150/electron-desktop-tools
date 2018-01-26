@@ -23,3 +23,5 @@ export NotFound from './layout/NotFound';
 export ShowStatistic from './statisticsAccessTimes/ShowStatistic';
 export ShowChat from './tuLingRobot/ShowChat';
 export ProjectList from './projectManager/ProjectList';
+export ShowImages from './imageViewer/ShowImages';
+

@@ -98,6 +98,9 @@ class Home extends React.Component {
                   <MenuItem key="/lifeEntertainmentManager">
                     <Link to="/lifeEntertainmentManager">生活娱乐管理</Link>
                   </MenuItem>
+                  <MenuItem key="/imageViewer">
+                    <Link to="/imageViewer">图片查看器</Link>
+                  </MenuItem>
                 </SubMenu>
               </Menu>
             </Sider>
