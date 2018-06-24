@@ -89,7 +89,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "simple-git": "^1.82.0",
-    "sort-object-attribute": "0.0.14",
+    "sort-object-attribute": "0.0.17",
     "style-loader": "^0.16.0",
     "thunk": "0.0.1",
     "viewerjs": "^1.0.0-beta.1",
